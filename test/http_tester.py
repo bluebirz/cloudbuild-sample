@@ -7,14 +7,12 @@ from requests.packages.urllib3.util.retry import Retry
 
 
 def test_args():
-    name = str(uuid.uuid4())
     port = os.getenv(
         "PORT", 8080
     )  # Each functions framework instance needs a unique port
 
     # access `\src` directory
     target_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "src")
-    print(target_dir)
     process = subprocess.Popen(
         [
             "functions-framework",
