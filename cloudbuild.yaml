@@ -1,10 +1,14 @@
 steps:
-  - name: "bash"
+  - name: "gcr.io/cloud-builders/gcloud"
     id: "check-json"
-    script: |
-      apt-get update
-      apt-get install jq -y
-      for i in $(ls contents/); do echo contents/$i; cat contents/$i | jq empty; done
+    waitFor: ["-"]
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        apt-get update
+        apt-get install jq -y
+        for i in $(ls contents/); do echo contents/$i; cat contents/$i | jq empty; done
   - name: "gcr.io/cloud-builders/gcloud"
     id: "copy-json"
     waitFor: ["check-json"]
