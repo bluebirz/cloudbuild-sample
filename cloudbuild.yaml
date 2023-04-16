@@ -1,11 +1,10 @@
 steps:
-  - name: "gcr.io/cloud-builders/kubectl"
+  - name: "bash"
     id: "check-json"
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-        for i in $(ls contents/); do echo contents/$i; cat contents/$i | jq empty; done
+    script: |
+      apt-get update
+      apt-get install jq -y
+      for i in $(ls contents/); do echo contents/$i; cat contents/$i | jq empty; done
   - name: "gcr.io/cloud-builders/gcloud"
     id: "copy-json"
     waitFor: ["check-json"]
