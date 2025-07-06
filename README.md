@@ -9,8 +9,7 @@
 
 ## blog related
 
-- [EN] [Automate your project with Google Cloud Build](https://www.bluebirz.net/en/automate-your-project-with-gcb/)
-- [TH] [Google Cloud Build ให้ทำงานอัตโนมัติ](https://www.bluebirz.net/th/automate-your-project-with-gcb-th/)
+- [Blog] [Automate your project with Google Cloud Build](https://bluebirz.net/posts/automate-your-project-with-gcb/)
 - [Medium] [Automate your project with Google Cloud Build](https://medium.com/@bluebirz/automate-your-project-with-google-cloud-build-d37a01e4d763)
 
 ## How to run
